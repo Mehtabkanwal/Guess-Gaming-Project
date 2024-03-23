@@ -1,4 +1,9 @@
 import inquirer from "inquirer";
+import chalk from "chalk";
+
+console.log(chalk.redBright(`
+-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X
+\t\t || Welcome To Kanwal Number Guessing Game`))
 
 
 const systemGeneratedNumber = Math.floor( Math.random()*10);
@@ -13,10 +18,10 @@ const answers:anyType = await inquirer.prompt([{
 }]);
 
 const {userGuess}= answers;
-console.log (`Guessed No: ${userGuess} , Correct Answer is: ${systemGeneratedNumber}`)
+console.log (chalk.blueBright.bgWhiteBright(`Guessed No: ${userGuess} , Correct Answer is: ${systemGeneratedNumber}`))
 if (userGuess === systemGeneratedNumber) {
-    console.log ("Correct Answer! Congratulations You have Win")
+    console.log (chalk.redBright("Correct Answer! Congratulations You have Win"))
 }
 else {
-    console.log ("Wrong Answer! Better Luck Next Time")
+    console.log (chalk.yellowBright("Wrong Answer! Better Luck Next Time"))
 };
